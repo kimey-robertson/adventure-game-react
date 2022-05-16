@@ -1,0 +1,28 @@
+.container {
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.945);
+    border-radius: 10%;
+    padding: 5%;
+    max-width: 80%;
+    box-shadow: 0 0 10px 2px;
+  }
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10%;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    background-color: rgb(91, 184, 72);
+    border: 1px solid blue;
+    border-radius: 10%;
+    padding: 10px 20px;
+    color: black;
+    outline: none;
+  }
+  
+  .btn:hover {
+    border-color: black;
+  }

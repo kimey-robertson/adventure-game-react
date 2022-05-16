@@ -1,0 +1,13 @@
+.card-body {
+    flex: 0;
+}
+
+.card-title {
+    font-size: 1.25rem;
+}
+
+.inv {
+    left: 2%;
+    margin-top: 1%;
+    width: 18rem;
+  }

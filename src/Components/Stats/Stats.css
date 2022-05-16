@@ -1,0 +1,33 @@
+.stats {
+    left: 0.5%;
+    margin-top: 1%;
+    width: 11.5rem;
+}
+
+.health-bar-piece {
+    background-color: red;
+    height: 2rem;
+    width: 20%;
+    margin: 0 0.05rem;
+}
+
+.energy-bar-piece {
+    background-color: rgb(47, 179, 7);
+    height: 2rem;
+    width: 20%;
+    margin: 0 0.05rem;
+  }
+
+.card-body {
+    flex: 0;
+}
+
+.card-title {
+    font-size: 1.25rem;
+}
+
+#health-bar, #energy-bar {
+    display: inline-flex;
+    padding: 0;
+    margin: 0.1rem 0;
+  }
