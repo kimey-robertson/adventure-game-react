@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Inventory from '../Inventory/Inventory'
 // import Stats from '../Stats/Stats'
-import EnemyCard from "../EnemyCard/EnemyCard";
+// import EnemyCard from "../EnemyCard/EnemyCard";
 import './CardContainer.css'
 
 export default function CardContainer(props) {
