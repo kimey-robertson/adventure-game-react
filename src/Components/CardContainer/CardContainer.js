@@ -1,23 +1,23 @@
 import React, {useState} from 'react'
 import Inventory from '../Inventory/Inventory'
-import Stats from '../Stats/Stats'
+// import Stats from '../Stats/Stats'
 import EnemyCard from "../EnemyCard/EnemyCard";
 import './CardContainer.css'
 
 export default function CardContainer(props) {
-const [enemy, setEnemy] = useState(false)
-const enemyCard = 
-        <EnemyCard 
-        playerState={props.playerState}/>
+// const [enemy, setEnemy] = useState(false)
+// const enemyCard = 
+//         <EnemyCard 
+//         playerState={props.playerState}/>
 
-function randomEnemy() {
-  const randomNumber = Math.floor(Math.random() * 10);
-  console.log(randomNumber);
-  if (randomNumber <= 1) {
-    console.log('enemy spawned')
-    setEnemy(true)
-  }
-}        
+// function randomEnemy() {
+//   const randomNumber = Math.floor(Math.random() * 10);
+//   console.log(randomNumber);
+//   if (randomNumber <= 1) {
+//     console.log('enemy spawned')
+//     setEnemy(true)
+//   }
+// }        
 
   return (
     <div className='card-container'>      

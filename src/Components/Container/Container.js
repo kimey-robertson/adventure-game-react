@@ -62,7 +62,9 @@ export default function Container(props) {
                                     >{option.text}
                                     </button>
                                 ) 
-                            } 
+                            } else {
+                                return null
+                            }
                         })
                     }
 
