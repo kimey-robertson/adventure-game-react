@@ -14,18 +14,18 @@ import './Container.css'
 // what was already there, and then adds to it everything in option.setState), then finally resetGame runs if there is a 'reset' property.
 
 
-export default function Container(props) {
+const Container = (props) => {
     const [textNodeId, setTextNodeId] = useState(1)
     const currentTextNode = textNodes.find(textNode => textNode.id === textNodeId)
-    const setPlayerState = props.setPlayerState
+    const {playerState, setPlayerState} = props
 
     const updateGold = (option) => {
         if (option.hasOwnProperty('addGold')) {
-            const gold = props.playerState.gold += option.addGold
-            setPlayerState({...props.playerState, gold})
+            const gold = playerState.gold += option.addGold
+            setPlayerState({...playerState, gold})
         } else if (option.hasOwnProperty('removeGold')) {
-            const gold = props.playerState.gold -= option.removeGold
-            setPlayerState({...props.playerState, gold})
+            const gold = playerState.gold -= option.removeGold
+            setPlayerState({...playerState, gold})
         } else {
             return
         }
@@ -40,14 +40,12 @@ export default function Container(props) {
     return (
         <>
             <div className="container">
-
-                {/* {JSON.stringify(props.playerState)} */}
                <TextNodes 
                 currentTextNode={currentTextNode} />
                 <div id="option-buttons" className="btn-grid">
                     {
                         currentTextNode.options.map(option => {
-                            if (!option.requiredState || option.requiredState(props.playerState)) {
+                            if (!option.requiredState || option.requiredState(playerState)) {
                                 return (   
                                     <button 
                                     className="btn"
@@ -56,7 +54,7 @@ export default function Container(props) {
                                     onClick={() => {
                                         setTextNodeId(option.nextText)
                                         updateGold(option)
-                                        setPlayerState({...props.playerState, ...option.setState})
+                                        setPlayerState({...playerState, ...option.setState})
                                         resetGame(option)                             
                                     }}
                                     >{option.text}
@@ -76,3 +74,5 @@ export default function Container(props) {
         </>
     )
 }
+
+export default Container;
