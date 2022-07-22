@@ -14,7 +14,7 @@ import './Container.css'
 // what was already there, and then adds to it everything in option.setState), then finally resetGame runs if there is a 'reset' property.
 
 
-export default function Container(props) {
+const Container = (props) => {
     const [textNodeId, setTextNodeId] = useState(1)
     const currentTextNode = textNodes.find(textNode => textNode.id === textNodeId)
     const {playerState, setPlayerState} = props
@@ -40,8 +40,6 @@ export default function Container(props) {
     return (
         <>
             <div className="container">
-
-                {/* {JSON.stringify(playerState)} */}
                <TextNodes 
                 currentTextNode={currentTextNode} />
                 <div id="option-buttons" className="btn-grid">
@@ -76,3 +74,5 @@ export default function Container(props) {
         </>
     )
 }
+
+export default Container;
