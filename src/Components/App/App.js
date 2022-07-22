@@ -18,10 +18,10 @@ const App = () => {
   return (
     <div className="App">
       <CardContainer 
-      playerState={playerState} />
+        playerState={playerState} />
       <Container 
-      playerState={playerState}
-      setPlayerState={setPlayerState}/>
+        playerState={playerState}
+        setPlayerState={setPlayerState}/>
     </div>
   );
 }
