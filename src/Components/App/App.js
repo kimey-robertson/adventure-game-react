@@ -6,7 +6,7 @@ import "./App.css";
 // Here we are defining the base state that we begin the game with.
 // All App.js does is hold onto the state and render the other components
 
-function App(props) {
+const App = () => {
   const [playerState, setPlayerState] = useState({
     gold: 0,
     health: 5,
