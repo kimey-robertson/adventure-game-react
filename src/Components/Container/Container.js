@@ -20,44 +20,53 @@ export default function Container(props) {
     const setPlayerState = props.setPlayerState
 
     const updateGold = (option) => {
-        if (option.hasOwnProperty('addGold')) {
-            const gold = props.playerState.gold += option.addGold
-            setPlayerState({...props.playerState, gold})
-        } else if (option.hasOwnProperty('removeGold')) {
-            const gold = props.playerState.gold -= option.removeGold
+        if (option.hasOwnProperty('updateGold')) {
+            const gold = props.playerState.gold += option.updateGold
             setPlayerState({...props.playerState, gold})
         } else {
             return
         }
     }
 
+    function spawnEnemy() {
+        if (props.playerState.enemyCanSpawn === true) {
+            const randomNumber = Math.floor(Math.random() * 10);
+            if (randomNumber <= 1) {
+            setPlayerState({...props.playerState, battle: true})
+            }
+        }
+    }
+
     function resetGame(option) {
-        if (option.hasOwnProperty('reset')) {
+        if (option.hasOwnProperty('reset') || props.playerState.health <= 0) {
             setPlayerState({gold: 0, health: 5, energy: 5, attack: 3, defence: 3})
+            setTextNodeId(1)
         }
     }
    
     return (
         <>
             <div className="container">
-
-                {/* {JSON.stringify(props.playerState)} */}
+               {JSON.stringify(props.playerState)} 
                <TextNodes 
                 currentTextNode={currentTextNode} />
                 <div id="option-buttons" className="btn-grid">
                     {
                         currentTextNode.options.map(option => {
                             if (!option.requiredState || option.requiredState(props.playerState)) {
-                                return (   
+                                return (
                                     <button 
                                     className="btn"
                                     value={option}
                                     key={option.key}
                                     onClick={() => {
+                                        if (props.playerState.battle !== true) {
                                         setTextNodeId(option.nextText)
                                         updateGold(option)
                                         setPlayerState({...props.playerState, ...option.setState})
-                                        resetGame(option)                             
+                                        spawnEnemy()
+                                        resetGame(option)
+                                        }                             
                                     }}
                                     >{option.text}
                                     </button>
@@ -67,10 +76,6 @@ export default function Container(props) {
                             }
                         })
                     }
-
-                    
-                    
-
                 </div>
             </div>
         </>

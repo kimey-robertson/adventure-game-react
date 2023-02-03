@@ -1,9 +1,5 @@
 .card-container {
     width: 100%;
     display: inline-flex;
-    justify-items: flex-start;
+    /* justify-content: space-evenly; */
   }
-
-#test {
-  height: 30%;
-}

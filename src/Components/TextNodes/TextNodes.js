@@ -65,7 +65,7 @@ export const textNodes = [
         text: 'Trade the rocks for some gold',
         requiredState: (currentState) => currentState.greenRocks,
         setState: { greenRocks: false },
-        addGold: 1,
+        updateGold: 1,
         nextText: 6,
       },
       {
@@ -152,7 +152,7 @@ export const textNodes = [
         requiredState: (currentState) =>
           currentState.gold >= 1 && !currentState.stayedAtInn,
         setState: { stayedAtInn: true } ,
-        removeGold: 1,
+        updateGold: -1,
         nextText: "pay-innkeeper",
       },
       {
@@ -164,7 +164,7 @@ export const textNodes = [
       {
         text: "Head back to the cave",
         requiredState: (currentState) => currentState.travelDisclaimer === true,
-        nextText: "travel",
+        nextText: "trader-again",
       },
       {
         text: "Head back to the cave",
@@ -294,29 +294,29 @@ export const textNodes = [
         requiredState: (currentState) =>
           currentState.gold === 5 && !currentState.sword,
         setState: { sword: true },
-        removeGold: 5,
+        updateGold: -5,
         nextText: "bought-sword",
       },
       {
         text: "Buy a shield (5 gold)",
         requiredState: (currentState) =>
           currentState.gold === 5 && !currentState.shield,
-          setState: { shield: true },
-        removeGold: 5,
+        setState: { shield: true },
+        updateGold: -5,
         nextText: "bought-shield",
       },
       {
         text: "Buy a torch (1 gold)",
         requiredState: (currentState) => currentState.gold === 1,
         setState: { torch: true },
-        removeGold: 1,
+        updateGold: -1,
         nextText: "bought-torch",
       },
       {
         text: "Sell your green rocks (5 gold)",
         requiredState: (currentState) => currentState.greenRocks,
         setState: { greenRocks: false } ,
-        addGold: 5,
+        updateGold: 5,
         nextText: "sold-rocks",
       },
       {
@@ -391,43 +391,17 @@ export const textNodes = [
     options: [
       {
         text: "Continue",
-        nextText: "travel",
+        nextText: "trader-again",
       },
       {
         text: "Continue, and don't ask again",
-        setState: { travelDisclaimer: true },
-        nextText: "travel",
+        setState: { travelDisclaimer: true, enemyCanSpawn: true },
+        nextText: "trader-again",
       },
     ],
   },
   {
-    id: "travel",
-    text: "You start walking down the road....",
-    options: [
-      {
-        text: "Continue",
-        nextText: 24,
-      },
-    ],
-  },
-  {
-    id: "enemy",
-    text: "You encounter an enemy. What do you want to do?",
-    options: [
-      {
-        text: "Attempt to flee (lose 2 health)",
-        setState: { battle: false, enemyCardToggle: true },
-        removeHealth: 2,
-        nextText: 24,
-      },
-      {
-        text: "Attack",
-        attack: true,
-      },
-    ],
-  },
-  {
-    id: 24,
+    id: 'trader-again',
     text: "You walk along the trail, and you run into the trader again.",
     options: [
       {
@@ -449,7 +423,7 @@ export const textNodes = [
         requiredState: (currentState) =>
           currentState.priceGreenRocks && !currentState.alreadyInterrogated,
         setState: { alreadyInterrogated: true },
-        addGold: 1,
+        updateGold: 1,
         nextText: 27,
       },
       {

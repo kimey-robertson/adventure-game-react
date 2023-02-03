@@ -30,6 +30,11 @@ export default function Stats(props) {
                 {props.playerState.health >= 3 && <div className="health-bar-piece"></div>}
                 {props.playerState.health >= 4 && <div className="health-bar-piece"></div>}
                 {props.playerState.health >= 5 && <div className="health-bar-piece"></div>}
+                {props.playerState.health >= 6 && <div className="health-bar-piece"></div>}
+                {props.playerState.health >= 7 && <div className="health-bar-piece"></div>}
+                {props.playerState.health >= 8 && <div className="health-bar-piece"></div>}
+                {props.playerState.health >= 9 && <div className="health-bar-piece"></div>}
+                {props.playerState.health >= 10 && <div className="health-bar-piece"></div>}
             </li>
             <li id="health-bar" className="list-group-item">
                 {props.playerState.energy >= 1 && <div className="energy-bar-piece"></div>}

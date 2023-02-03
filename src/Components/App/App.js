@@ -11,17 +11,48 @@ function App(props) {
     gold: 0,
     health: 5,
     energy: 5,
-    attack: 3,
-    defence: 3
+    attack: 10,
+    defence: 5,
+    battle: false
 })
 
   return (
     <div className="App">
       <CardContainer 
-      playerState={playerState} />
+      playerState={playerState} 
+      setPlayerState={setPlayerState}/>
       <Container 
       playerState={playerState}
       setPlayerState={setPlayerState}/>
+      <div className='test-buttons'>
+          <button 
+          id='test'
+          className="btn"
+          value=''
+          onClick={() => {}
+          }
+          
+          >nothing
+          </button>
+          <button 
+          id='test'
+          className="btn"
+          value='testing button 2'
+          onClick={() => {    
+            setPlayerState({...playerState, battle: false})                    
+          }}
+          >set battle false
+          </button>
+          <button 
+          id='test'
+          className="btn"
+          value='testing button 2'
+          onClick={() => {    
+            setPlayerState({...playerState, battle: true})                    
+          }}
+          >set battle true
+          </button>
+          </div>
     </div>
   );
 }
