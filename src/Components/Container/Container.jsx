@@ -38,7 +38,6 @@ const Container = (props) => {
     }
    
     return (
-        <>
             <div className="container">
                <TextNodes 
                 currentTextNode={currentTextNode} />
@@ -71,7 +70,6 @@ const Container = (props) => {
 
                 </div>
             </div>
-        </>
     )
 }
 

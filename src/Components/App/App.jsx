@@ -17,11 +17,13 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className='wrapper'>
       <CardContainer 
         playerState={playerState} />
       <Container 
         playerState={playerState}
         setPlayerState={setPlayerState}/>
+      </div>
     </div>
   );
 }

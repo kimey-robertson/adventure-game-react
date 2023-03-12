@@ -1,5 +1,8 @@
 .App {
-  background-color: #333;;
+  background-image: url("/Users/macosx/Documents/Projects/adventure-game-react/src/images/forest and castle.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   width: 100vw;
   height: 100vh;
   padding: 0;
@@ -9,9 +12,11 @@
   /* display: inline-flex; */
 }
 
-.card-container {
-  width: 100%;
-  display: inline-flex;
-  justify-items: flex-start;
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1.2fr 1fr 0.8fr;
 }
 
