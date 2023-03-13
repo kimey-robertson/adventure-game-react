@@ -4,9 +4,9 @@ Adventure Game is an interactive text-based game that allows players to immerse 
 
 # Features
 
-Engaging storyline that keeps players hooked and wanting more
-Immersive world with detailed descriptions of environments and characters
-Player-driven gameplay that allows for different paths and outcomes based on player decisions
+- Engaging storyline that keeps players hooked and wanting more
+- Immersive world with detailed descriptions of environments and characters
+- Player-driven gameplay that allows for different paths and outcomes based on player decisions
 
 # Getting started
 The Adventure Game is hosted live and can be accessed by visiting https://jazzy-bunny-473a0e.netlify.app/. No installation or download is required, and the game can be played on any device with a web browser.
