@@ -1,5 +1,5 @@
 .App {
-  background-image: url("/Users/macosx/Documents/Projects/adventure-game-react/src/images/forest-and-castle.webp");
+  background-image: url("../../images/forest-and-castle.webp");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
